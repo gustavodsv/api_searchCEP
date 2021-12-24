@@ -13,3 +13,6 @@ Route::get('/home', [AdressController::class, 'index'])->name('home');
 
 Route::get('/search', [AdressController::class, 'searchAction'])->name('search');
 
+Route::post('/save', [AdressController::class, 'saveAction'])->name('save');
+
+

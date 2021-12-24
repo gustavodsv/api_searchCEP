@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Http\Requests\Adress\SaveRequest;
 
 class AdressController extends Controller
 {
@@ -24,5 +25,9 @@ class AdressController extends Controller
                 'estado' => $response['uf']
             ]
         );
+    }
+
+    public function saveAction(SaveRequest $request) {
+        dd($request->all());
     }
 }
