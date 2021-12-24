@@ -15,3 +15,10 @@ Neste Labs vamos construir uma aplicação MVC utilizando o framework PHP Larave
 - Laravel
 - HTML
 - Bootstrap
+
+## Banco de dados
+- Criar tabela no banco de dados 
+
+Migration(create_table_adress) 
+Caminho: <database/migrations>
+Executar: `php artisan migrate`

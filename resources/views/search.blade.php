@@ -18,7 +18,7 @@
 
             <div class="mb-3 mt-3">
                 <label class="form-label">CEP</label>
-                <input class="form-control" type="text" name="cep">
+                <input class="form-control" type="text" name="cep" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Buscar</button>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Http\Requests\Adress\SaveRequest;
+use App\Models\Adress;
 
 class AdressController extends Controller
 {
@@ -28,6 +29,18 @@ class AdressController extends Controller
     }
 
     public function saveAction(SaveRequest $request) {
-        dd($request->all());
+        $adress = Adress::create(
+            [
+                'cep' => $request->input('cep'),
+                'logradouro' => $request->input('logradouro'),
+                'numero' => $request->input('numero'),
+                'complemento' => $request->input('complemento'),
+                'bairro' => $request->input('bairro'),
+                'cidade' => $request->input('cidade'),
+                'estado' => $request->input('estado'),
+            ]
+        );
+
+        dd($adress->id);
     }
 }
