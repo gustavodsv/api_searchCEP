@@ -20,5 +20,7 @@ Neste Labs vamos construir uma aplicação MVC utilizando o framework PHP Larave
 - Criar tabela no banco de dados 
 
 Migration(create_table_adress) 
-Caminho: <database/migrations>
+
+Caminho: /database/migrations
+
 Executar: `php artisan migrate`
