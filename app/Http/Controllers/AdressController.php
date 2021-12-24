@@ -14,6 +14,15 @@ class AdressController extends Controller
     public function searchAction(Request $request) {
         $cep = $request->input('cep');
         $response = Http::get("viacep.com.br/ws/$cep/json/")->json();
-        dd($response);
+
+        return view('add')->with(
+            [
+                'cep' => $request->input('cep'),
+                'logradouro' => $response['logradouro'],
+                'bairro' => $response['bairro'],
+                'cidade' => $response['localidade'],
+                'estado' => $response['uf']
+            ]
+        );
     }
 }
