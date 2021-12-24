@@ -39,18 +39,24 @@ class AdressController extends Controller
 
     public function saveAction(SaveRequest $request) {
 
-        Adress::create(
-            [
-                'cep' => $request->input('cep'),
-                'logradouro' => $request->input('logradouro'),
-                'numero' => $request->input('numero'),
-                'complemento' => $request->input('complemento'),
-                'bairro' => $request->input('bairro'),
-                'cidade' => $request->input('cidade'),
-                'estado' => $request->input('estado'),
-            ]
-        );
+        $adress = Adress::where('cep', $request->input('cep'))->where('numero', $request->input('numero'))->first();
 
-        return redirect('/home');
+        if(!$adress) {
+            Adress::create(
+                [
+                    'cep' => $request->input('cep'),
+                    'logradouro' => $request->input('logradouro'),
+                    'numero' => $request->input('numero'),
+                    'complemento' => $request->input('complemento'),
+                    'bairro' => $request->input('bairro'),
+                    'cidade' => $request->input('cidade'),
+                    'estado' => $request->input('estado'),
+                ]
+            );
+
+            return redirect('/home')->withSucesso('Endereço cadastrado com sucesso!');
+        }
+
+        return redirect('/home')->withErro('O endereço já está cadastrado');
     }
 }
