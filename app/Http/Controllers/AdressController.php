@@ -10,6 +10,15 @@ use App\Models\Adress;
 class AdressController extends Controller
 {
     public function index() {
+        $data = Adress::all();
+        return view('home')->with(
+            [
+                'adress' => $data
+            ]
+        );
+    }
+
+    public function add() {
         return view('search');
     }
 
@@ -29,7 +38,8 @@ class AdressController extends Controller
     }
 
     public function saveAction(SaveRequest $request) {
-        $adress = Adress::create(
+
+        Adress::create(
             [
                 'cep' => $request->input('cep'),
                 'logradouro' => $request->input('logradouro'),
@@ -41,6 +51,6 @@ class AdressController extends Controller
             ]
         );
 
-        dd($adress->id);
+        return redirect('/home');
     }
 }
