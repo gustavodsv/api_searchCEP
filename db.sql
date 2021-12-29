@@ -12,15 +12,16 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Copiando dados para a tabela api_searchcep.adress: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela api_searchcep.adress: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `adress` DISABLE KEYS */;
 INSERT INTO `adress` (`id`, `cep`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `estado`, `created_at`, `updated_at`) VALUES
 	(1, '08090284', 'Rua 03 de Outubro', '0', NULL, 'Jardim Helena', 'São Paulo', 'SP', '2021-12-24 18:25:31', '2021-12-24 18:25:31'),
 	(2, '08090284', 'Rua 03 de Outubro', '1', NULL, 'Jardim Helena', 'São Paulo', 'SP', '2021-12-24 18:25:40', '2021-12-24 18:25:40'),
-	(3, '08090284', 'Rua 03 de Outubro', '2', 'complemento', 'Jardim Helena', 'São Paulo', 'SP', '2021-12-24 18:25:52', '2021-12-24 18:25:52');
+	(3, '08090284', 'Rua 03 de Outubro', '2', 'complemento', 'Jardim Helena', 'São Paulo', 'SP', '2021-12-24 18:25:52', '2021-12-24 18:25:52'),
+	(4, '72238165', 'SHPS Quadra 207 Conjunto C', '17', 'casa da Érika', 'Setor Habitacional Pôr do Sol (Ceilândia)', 'Brasília', 'DF', '2021-12-24 19:09:51', '2021-12-24 19:09:51');
 /*!40000 ALTER TABLE `adress` ENABLE KEYS */;
 
--- Copiando dados para a tabela api_searchcep.migrations: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela api_searchcep.migrations: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2019_12_14_000001_create_personal_access_tokens_table', 1),
